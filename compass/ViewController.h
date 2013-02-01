@@ -7,7 +7,17 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreLocation/CLLocationManagerDelegate.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<CLLocationManagerDelegate>{
+    CLLocationCoordinate2D currentLocation;
+    CLLocationDirection currentHeading;
+    CLLocationManager *locationManager;
+    NSTimer *timerShine;
+}
+
+@property(nonatomic,strong)IBOutlet UIImageView *compassView;
+@property(nonatomic, strong)CLLocationManager *locationManager;
+@property(nonatomic, strong)NSTimer *timerShine;
 
 @end
